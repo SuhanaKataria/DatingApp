@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div *ngIf="!registerMode" style="text-align: center;">
+    <h1>Find your match</h1>
+    <p class="lead">Come to view your matches....alll you need to do is sign up</p>
+    <div class="text-center">
+        <button (click)="registerToggle()" class="btn btn-primary btn-lg me-2">Register</button>
+
+        <button class="btn btn-primary btn-info btn-lg">Learn more</button>
+    </div>
+  </div>
+  <div *ngIf="registerMode" class="container">
+    <div class="row justify-content-center">
+        <div class="col-4">
+        
+          <h2>{{currentMessage}}</h2>
+          <h3>{{currentMessage2}}</h3>
+          <button class="btn btn-success me-2" (click)="cv()">ChangeValue</button>
+          <p>
+            Enter Message: <input type="text" #message>
+            <button (click)="sendMessage(message)">Send Message</button>
+          </p>
+          <p>
+            Enter Message: <input type="text" #message2>
+            <button (click)="sendMessage2(message2)">Send Message</button>
+          </p>
+     <app-register [item]="Suhana" (cancelRegister)="cancelRegisterMode($event)"></app-register>
+          
+        </div>
+    </div>
+  </div>
+</div>
